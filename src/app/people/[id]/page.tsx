@@ -511,6 +511,20 @@ export default function PersonPage({ params }: { params: Promise<PageParams> }) 
         )}
 
 
+        {/* Recruitment Needs Section */}
+        {person.recruitmentNeeds && (
+          <div className="mb-12">
+            <h2 className="text-3xl font-postmodern-heading text-white mb-8 flex items-center gap-3 tracking-tight">
+              <Users size={32} />
+              Recruitment Needs
+            </h2>
+            <div className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50">
+              <p className="text-gray-300 text-sm">{person.recruitmentNeeds && person.recruitmentNeeds.trim() ? person.recruitmentNeeds : "暂无特定招聘需求"}</p>
+            </div>
+          </div>
+        )}
+
+
 
         {/* Contact Modal */}
         {isContactModalOpen && (
