@@ -116,22 +116,23 @@ export const bandsData: Band[] = [
   {
     id: "5",
     name: "安得万全法",
-    photo: "/next.svg",
-    description: "An acoustic folk group that tells stories through music. Their intimate performances and heartfelt lyrics create deep connections with audiences.",
-    genre: "Acoustic Folk",
-    tags: ["acoustic", "folk", "storytelling", "intimate"],
-    members: ["5", "8", "9", "11"],
-    formed: "2022",
-    social: {
-      instagram: "@band5_folk",
-      youtube: "Band5Folk",
-      spotify: "Band 5"
-    },
+    photo: "/bandphotos/5.jpg",
+    description: "万青一二专都演过。",
+    genre: "Electric Prog",
+    tags: ["Progressive Rock", "Post-Punk"],
+    members: ["5", "8", "9", "11", "24", "22", "42", "4", "38", "41", "43", "44", "45", "46", "47"],
+    formed: "2024",
     googleDrive: {
-      url: "https://drive.google.com/drive/folders/5Band5_AcousticFolk_Stories",
+      url: "https://drive.google.com/drive/folders/1ptvikXMb4XXYDSRRoSY7UbPsmuSdbaQZ?usp=sharing",
       description: "民谣歌曲录音、原创故事歌词、吉他指弹教学和篝火音乐会记录"
     },
-    recruitmentNeeds: "Looking for an acoustic guitarist who can fingerpick and play in various tunings, and a harmonica player for authentic folk sound. Also seeking a songwriter who specializes in folk narratives and storytelling."
+    youtubeVideos: [
+      {
+        title: "在这颗行星所有的酒馆 + 永嘉彗星 + 杀死那个石家庄人 (现场内录)",
+        url: "https://www.youtube.com/watch?v=KQ25AVExiM0&t=288s&ab_channel=lhm"
+      },
+    ],
+    recruitmentNeeds: "招一个萨克斯手。招一个小号手。招一个吉他手。"
   },
   {
     id: "6",

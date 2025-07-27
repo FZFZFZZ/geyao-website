@@ -88,7 +88,7 @@ export const peopleData: Person[] = [
     photo: "/photos/Zhao_Lixiuqi.jpg",
     roles: ["Drums", "Bass"],
     department: "Performer",
-    bands: ["3", "4"],
+    bands: ["3", "4", "5"],
     social: {
       wechat: "/qr-codes/collection.png",
       instagram: "alex_go_sleep",
@@ -405,7 +405,8 @@ export const peopleData: Person[] = [
     id: "22",
     name: "Wu Xiangjiehui",
     department: ["Performer"],
-    bands: ["3"],
+    roles: ["Guitar"],
+    bands: ["3", "5"],
     social: {
       wechat: "/qr-codes/collection.png",
     },
@@ -423,7 +424,8 @@ export const peopleData: Person[] = [
     id: "24",
     name: "Zhao Mingyu",
     department: ["Performer"],
-    bands: ["3"],
+    roles: ["Vocal"],
+    bands: ["3", "5"],
     social: {
       wechat: "/qr-codes/collection.png",
     },
@@ -549,7 +551,8 @@ export const peopleData: Person[] = [
     id: "38",
     name: "李霄扬",
     department: ["Performer"],
-    bands: ["7"],
+    roles: ["Guitar"],
+    bands: ["7", "5"],
     social: {
       wechat: "/qr-codes/collection.png",
     },
@@ -568,6 +571,76 @@ export const peopleData: Person[] = [
     name: "刘现奕",
     department: ["Performer"],
     bands: ["7"],
+    social: {
+      wechat: "/qr-codes/collection.png",
+    },
+  },
+  {
+    id: "41",
+    name: "Bei Chengyushu",
+    department: ["Performer"],
+    roles: ["Guitar"],
+    bands: ["5"],
+    social: {
+      wechat: "/qr-codes/collection.png",
+    },
+  },
+  {
+    id: "42",
+    name: "Huang Yuqi",
+    department: ["Performer"],
+    bands: ["5"],
+    roles: ["Bass"],
+    social: {
+      wechat: "/qr-codes/collection.png",
+    },
+  },
+  {
+    id: "43",
+    name: "Li Daoxin",
+    department: ["Performer"],
+    bands: ["5"],
+    roles: ["Bass"],
+    social: {
+      wechat: "/qr-codes/collection.png",
+    },
+  },
+  {
+    id: "44",
+    name: "Guan Ziwen",
+    department: ["Performer"],
+    roles: ["Trumpet"],
+    bands: ["5"],
+    social: {
+      wechat: "/qr-codes/collection.png",
+    },
+  },
+  {
+    id: "45",
+    name: "Wu jiawei",
+    department: ["Performer"],
+    roles: ["Viola"],
+    bands: ["5"],
+    social: {
+      wechat: "/qr-codes/collection.png",
+    },
+  },
+  {
+    id: "46",
+    name: "Qian Ruiwen",
+    department: ["Performer"],
+    roles: ["Keys", "Synthesizer"],
+    bands: ["5"],
+    social: {
+      wechat: "/qr-codes/collection.png",
+    },
+  },
+  {
+    id: "47",
+    name: "Wang Yuchen",
+    department: ["Performer"],
+    roles: ["Vocal"],
+    bands: ["5"],
     social: {
       wechat: "/qr-codes/collection.png",
     },
