@@ -118,9 +118,9 @@ const Bubble: React.FC<BubbleProps> = ({ bubble, onClick }) => {
             style={{ width: iconSize, height: iconSize }}
             className="icon-vibrate"
           />
-        ) : (
+        ) : bubble.icon ? (
           <FontAwesomeIcon icon={bubble.icon} style={{ width: iconSize, height: iconSize }} className="text-white icon-vibrate" />
-        )}
+        ) : null}
         {/* Platform Name */}
         <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-black/80 backdrop-blur-sm text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-out whitespace-nowrap z-50">
           {bubble.platform}

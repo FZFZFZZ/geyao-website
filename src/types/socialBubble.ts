@@ -1,8 +1,10 @@
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+
 export interface SocialBubble {
   id: string;
   platform: string;
   url: string;
-  icon: unknown; // FontAwesome icon definition or null for custom SVG
+  icon: IconProp | null; // FontAwesome icon definition or null for custom SVG
   color: string;
   variant?: string;
   baseSize?: number;

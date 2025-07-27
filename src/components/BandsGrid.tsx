@@ -54,7 +54,7 @@ const BandsGrid = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-8 py-12">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-postmodern-display text-white mb-4 tracking-tight">
@@ -94,7 +94,7 @@ const BandsGrid = () => {
         </div>
 
         {/* Bands Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {filteredBands.map((band) => {
             const bandMembers = getBandMembers(band.members);
             return (
@@ -195,7 +195,7 @@ const BandsGrid = () => {
                           e.stopPropagation();
                           window.open(`https://instagram.com/${band.social?.instagram?.replace('@', '') || ''}`, '_blank');
                         }}
-                        className="p-2 bg-gray-700/50 rounded-lg hover:bg-primary/20 hover:text-primary transition-all duration-300"
+                        className="p-2 bg-gray-700/50 rounded-lg hover:bg-primary/20 hover:text-primary transition-all duration-300 cursor-pointer"
                       >
                         <FontAwesomeIcon icon={faInstagram} size="lg" />
                       </button>
@@ -207,7 +207,7 @@ const BandsGrid = () => {
                           e.stopPropagation();
                           window.open(`https://youtube.com/@${band.social?.youtube || ''}`, '_blank');
                         }}
-                        className="p-2 bg-gray-700/50 rounded-lg hover:bg-primary/20 hover:text-primary transition-all duration-300"
+                        className="p-2 bg-gray-700/50 rounded-lg hover:bg-primary/20 hover:text-primary transition-all duration-300 cursor-pointer"
                       >
                         <FontAwesomeIcon icon={faYoutube} size="lg" />
                       </button>
@@ -219,7 +219,7 @@ const BandsGrid = () => {
                           e.stopPropagation();
                           window.open(`https://open.spotify.com/artist/${band.social?.spotify || ''}`, '_blank');
                         }}
-                        className="p-2 bg-gray-700/50 rounded-lg hover:bg-primary/20 hover:text-primary transition-all duration-300"
+                        className="p-2 bg-gray-700/50 rounded-lg hover:bg-primary/20 hover:text-primary transition-all duration-300 cursor-pointer"
                       >
                         <FontAwesomeIcon icon={faMusic} size="lg" />
                       </button>

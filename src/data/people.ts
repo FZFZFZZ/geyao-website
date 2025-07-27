@@ -97,7 +97,7 @@ export const peopleData: Person[] = [
     casualTalk: "V我50",
     topAlbums: [
       "David Tao (陶喆同名专辑)",
-      "15",
+      "We Like It Here",
       "Appetite For Destruction",
       "Voodoo",
       "Slipknot",

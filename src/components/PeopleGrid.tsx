@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { peopleData } from "@/data/people";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMusic, faUsers, faMicrophone, faDrum, faGuitar, faCog, faCommentDots, faBullhorn } from '@fortawesome/free-solid-svg-icons';
+import { faMusic, faUsers, faMicrophone, faDrum, faGuitar, faCog, faCommentDots, faBullhorn, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import Image from "next/image";
 import Link from "next/link";
 
@@ -25,16 +25,29 @@ const roleIcons = {
 
 const PeopleGrid = () => {
   const [selectedDepartment, setSelectedDepartment] = useState<string>("all");
+  const [selectedInstrument, setSelectedInstrument] = useState<string>("all");
   const [hoveredPerson, setHoveredPerson] = useState<string | null>(null);
 
-  const filteredPeople = selectedDepartment === "all" 
-    ? peopleData 
-    : peopleData.filter(person => {
-        if (Array.isArray(person.department)) {
-          return person.department.includes(selectedDepartment);
-        }
-        return person.department === selectedDepartment;
-      });
+  // Get all unique instruments from people data
+  const allInstruments = Array.from(new Set(
+    peopleData.flatMap(person => person.roles || [])
+  )).sort();
+
+  const instruments = ["all", ...allInstruments];
+
+  const filteredPeople = peopleData.filter(person => {
+    // Department filter
+    const departmentMatch = selectedDepartment === "all" || 
+      (Array.isArray(person.department) 
+        ? person.department.includes(selectedDepartment)
+        : person.department === selectedDepartment);
+    
+    // Instrument filter
+    const instrumentMatch = selectedInstrument === "all" || 
+      (person.roles && person.roles.includes(selectedInstrument));
+    
+    return departmentMatch && instrumentMatch;
+  });
 
   const departments = ["all", ...Array.from(new Set(
     peopleData.flatMap(p => 
@@ -67,14 +80,14 @@ const PeopleGrid = () => {
         </div>
 
         {/* Department Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
           {departments.map((dept) => {
             const Icon = dept === "all" ? faUsers : (departmentIcons[dept as keyof typeof departmentIcons] || faUsers);
             return (
               <button
                 key={dept}
                 onClick={() => setSelectedDepartment(dept || "all")}
-                className={`flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-300 ${
+                className={`flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-300 cursor-pointer ${
                   selectedDepartment === dept
                     ? "bg-primary text-white shadow-lg shadow-primary/25"
                     : "bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 hover:text-white"
@@ -85,6 +98,26 @@ const PeopleGrid = () => {
               </button>
             );
           })}
+        </div>
+
+        {/* Instrument Filter */}
+        <div className="flex justify-center mb-12">
+          <div className="relative">
+            <select
+              value={selectedInstrument}
+              onChange={(e) => setSelectedInstrument(e.target.value)}
+              className="appearance-none bg-gray-800/50 border-2 border-gray-700/50 rounded-full px-6 py-3 text-white focus:outline-none focus:ring-4 focus:ring-primary/40 focus:border-primary transition-all duration-300 cursor-pointer min-w-[200px]"
+            >
+              {instruments.map((instrument) => (
+                <option key={instrument} value={instrument} className="bg-gray-800 text-white">
+                  {instrument === "all" ? "All Instruments" : instrument}
+                </option>
+              ))}
+            </select>
+            <div className="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
+              <FontAwesomeIcon icon={faChevronDown} size="sm" className="text-gray-400" />
+            </div>
+          </div>
         </div>
 
         {/* People Grid */}
@@ -158,7 +191,16 @@ const PeopleGrid = () => {
         {filteredPeople.length === 0 && (
           <div className="text-center py-12">
             <FontAwesomeIcon icon={faMusic} size="5x" className="mx-auto text-gray-600 mb-4" />
-            <p className="text-gray-400 text-lg">No members found in this department.</p>
+            <p className="text-gray-400 text-lg">
+              {selectedDepartment !== "all" && selectedInstrument !== "all" 
+                ? `No members found in ${selectedDepartment} department playing ${selectedInstrument}.`
+                : selectedDepartment !== "all"
+                ? `No members found in ${selectedDepartment} department.`
+                : selectedInstrument !== "all"
+                ? `No members found playing ${selectedInstrument}.`
+                : "No members found."
+              }
+            </p>
           </div>
         )}
       </div>

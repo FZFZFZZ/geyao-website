@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useState } from "react";
 import React from "react";
 import { GENERAL_RECRUITMENT_NEEDS } from "@/data/recruitmentNeeds";
+import JoinUsButton from "@/components/JoinUsButton";
 
 interface BandPageProps {
   params: Promise<{
@@ -17,7 +18,6 @@ interface BandPageProps {
 }
 
 const BandPage = ({ params }: BandPageProps) => {
-  const [isJoinUsModalOpen, setIsJoinUsModalOpen] = useState(false);
   const { id } = React.use(params);
   const band = bandsData.find(b => b.id === id);
   
@@ -325,69 +325,21 @@ const BandPage = ({ params }: BandPageProps) => {
         )}
 
         {/* 固定位置的Join Us按钮 */}
-        <div className="fixed top-20 right-4 z-60">
-          <button
-            onClick={() => setIsJoinUsModalOpen(true)}
-            className="animate-ping-custom transition-all duration-300 cursor-pointer focus:outline-none focus:ring-4 focus:ring-purple-500/50 rounded-lg p-2 md:p-3 transform rotate-12"
-          >
-            <span className="font-join-us">
-              Join Us
-            </span>
-          </button>
-        </div>
-
-        {/* Join Us Modal */}
-        {isJoinUsModalOpen && (
-          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
-            <div className="bg-gray-800 rounded-xl p-8 max-w-2xl w-full mx-4 relative border border-gray-700 shadow-2xl max-h-[90vh] overflow-y-auto">
-              <button
-                onClick={() => setIsJoinUsModalOpen(false)}
-                className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
-              >
-                <X size={24} />
-              </button>
-              
-              <div className="text-center mb-6">
-                <h2 className="text-3xl font-bold text-white mb-4 font-postmodern-display">
-                  Join Us
-                </h2>
-                <p className="text-gray-300 font-postmodern-body">
-                  欢迎加入我们的音乐社团！
-                </p>
+        <JoinUsButton 
+          customContent={
+            band.recruitmentNeeds && band.recruitmentNeeds.trim() ? (
+              <div className="bg-primary/10 rounded-lg p-6 border border-primary/20 mb-6">
+                <h3 className="text-xl font-bold text-primary mb-3">{band.name} 的招聘需求</h3>
+                <p className="text-gray-300 text-sm">{band.recruitmentNeeds}</p>
               </div>
-              
-              <div className="space-y-6">
-                {/* 乐队招聘需求 */}
-                {band.recruitmentNeeds && band.recruitmentNeeds.trim() ? (
-                  <div className="bg-primary/10 rounded-lg p-6 border border-primary/20">
-                    <h3 className="text-xl font-bold text-primary mb-3">
-                      {band.name} 的招聘需求
-                    </h3>
-                    <p className="text-gray-300 text-sm">
-                      {band.recruitmentNeeds}
-                    </p>
-                  </div>
-                ) : (
-                  <div className="bg-gray-700/20 rounded-lg p-6 border border-gray-600/30">
-                    <h3 className="text-xl font-bold text-gray-400 mb-3">
-                      {band.name} 的招聘需求
-                    </h3>
-                    <p className="text-gray-500 text-sm italic">
-                      暂无特定招聘需求
-                    </p>
-                  </div>
-                )}
-                
-                {/* 总招聘需求 */}
-                <div className="bg-gray-900/50 rounded-lg p-6">
-                  <pre className="text-gray-300 whitespace-pre-wrap text-sm leading-relaxed">
-                    {GENERAL_RECRUITMENT_NEEDS}
-                  </pre>
-                </div>
+            ) : (
+              <div className="bg-gray-700/20 rounded-lg p-6 border border-gray-600/30 mb-6">
+                <h3 className="text-xl font-bold text-gray-400 mb-3">{band.name} 的招聘需求</h3>
+                <p className="text-gray-500 text-sm italic">暂无特定招聘需求</p>
               </div>
-            </div>
-          </div>
-        )}
+            )
+          }
+        />
 
       </div>
     </div>
