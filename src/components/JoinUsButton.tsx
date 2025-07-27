@@ -30,9 +30,9 @@ const JoinUsButton = ({
           <Image
             src="/JOIN US(Quagmire).svg"
             alt="Join Us"
-            width={120}
-            height={60}
-            className="w-28 h-14 sm:w-30 sm:h-15 md:w-36 md:h-18 lg:w-50 lg:h-25"
+            width={160}
+            height={80}
+            className="w-36 h-18 sm:w-40 sm:h-20 md:w-48 md:h-24 lg:w-64 lg:h-32"
           />
         </button>
       </div>

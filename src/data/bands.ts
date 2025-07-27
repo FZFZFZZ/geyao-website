@@ -91,7 +91,6 @@ export const bandsData: Band[] = [
     },
     googleDrive: {
       url: "https://drive.google.com/drive/folders/3Band3_ClassicalCrossover_Scores",
-      description: "古典交叉风格乐谱、弦乐四重奏录音、音乐会演出视频和编曲作品"
     },
     bilibiliVideos: [
       {

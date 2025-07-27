@@ -58,7 +58,7 @@ const Navbar = () => {
               className="flex items-center gap-2 text-white font-postmodern-heading text-xl hover:text-primary transition-colors tracking-tight"
             >
               <FontAwesomeIcon icon={faMusic} size="lg" />
-              <span>Geyao Music</span>
+              <span>Geyao</span>
             </Link>
 
             {/* Desktop Navigation */}
