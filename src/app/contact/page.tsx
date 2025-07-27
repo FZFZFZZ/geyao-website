@@ -3,18 +3,15 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { X } from "lucide-react";
 import socialPlatforms from '@/data/socialPlatforms';
 import Bubble from '@/components/Bubble';
 import { getCustomPulseStyles } from '@/lib/bubbleStyles';
 import type { SocialBubble } from '@/types/socialBubble';
-import { GENERAL_RECRUITMENT_NEEDS } from '@/data/recruitmentNeeds';
 import JoinUsButton from '@/components/JoinUsButton';
 
 const ContactPage = () => {
   const [bubbles, setBubbles] = useState<SocialBubble[]>([]);
   const [animationKey, setAnimationKey] = useState(0);
-  const [isJoinUsModalOpen, setIsJoinUsModalOpen] = useState(false);
 
   // Check if two bubbles overlap considering their actual sizes and a safety margin
   const checkOverlap = (x1: number, y1: number, size1: number, x2: number, y2: number, size2: number, safetyMargin = 20) => {
@@ -106,7 +103,6 @@ const ContactPage = () => {
         // Desktop fallback: expand grid slightly (in top 2/3 area)
         const fallbackSpacing = Math.min(120, (width - sidePadding * 2) / 4);
         const fallbackCols = Math.floor((width - sidePadding * 2) / fallbackSpacing);
-        const fallbackRows = Math.ceil(bubbleCount / fallbackCols);
         
         for (let i = 0; i < bubbleCount; i++) {
           const col = i % fallbackCols;
@@ -317,7 +313,6 @@ const ContactPage = () => {
             <motion.div
               key={`meme-${animationKey}`}
               className="flex-shrink-0 cursor-pointer hover:scale-110 transition-transform duration-300"
-              onClick={() => setIsJoinUsModalOpen(true)}
               initial={{ 
                 opacity: 0,
                 scale: 0.8,

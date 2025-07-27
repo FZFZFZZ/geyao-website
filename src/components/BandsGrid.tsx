@@ -5,7 +5,7 @@ import { bandsData } from "@/data/bands";
 import { peopleData } from "@/data/people";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
-import { faMusic, faCalendar, faGuitar, faMicrophone, faDrum, faUsers, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faMusic, faCalendar, faUsers, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Image from "next/image";
 import Link from "next/link";
 

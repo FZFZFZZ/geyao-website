@@ -13,7 +13,7 @@ export default function NotFound() {
             Member Not Found
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-md mx-auto">
-            The member you're looking for doesn't exist or has been moved.
+            The member you&apos;re looking for doesn&apos;t exist or has been moved.
           </p>
         </div>
 

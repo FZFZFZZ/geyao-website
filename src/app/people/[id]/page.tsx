@@ -3,12 +3,11 @@
 import { notFound } from "next/navigation";
 import { peopleData } from "@/data/people";
 import { bandsData } from "@/data/bands";
-import { Instagram, Youtube, Music, Users, Calendar, Mail, Phone, Guitar, Mic, Drum, Piano, Music2, Play, X, MessageCircle } from "lucide-react";
+import { Instagram, Music, Users, Guitar, Mic, Drum, Piano, Music2, MessageCircle, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import React from "react";
-import { GENERAL_RECRUITMENT_NEEDS } from "@/data/recruitmentNeeds";
 import JoinUsButton from "@/components/JoinUsButton";
 
 interface PageParams {
@@ -127,8 +126,8 @@ export default function PersonPage({ params }: { params: Promise<PageParams> }) 
         }
       }
       
-    } catch (error: any) {
-      if (error.name === 'AbortError') {
+    } catch (error: unknown) {
+      if (error instanceof Error && error.name === 'AbortError') {
         console.warn(`Album artwork request timed out for: ${title} by ${artist}`);
       } else {
         console.error(`Error fetching album artwork for ${title}:`, error);
@@ -285,7 +284,7 @@ export default function PersonPage({ params }: { params: Promise<PageParams> }) 
 
               {person.casualTalk && (
                 <p className="text-xl text-gray-300 leading-relaxed mb-8 italic font-postmodern-body">
-                  "{person.casualTalk}"
+                  &quot;{person.casualTalk}&quot;
                 </p>
               )}
 

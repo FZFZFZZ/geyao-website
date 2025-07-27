@@ -26,7 +26,7 @@ const roleIcons = {
 const PeopleGrid = () => {
   const [selectedDepartment, setSelectedDepartment] = useState<string>("all");
   const [selectedInstrument, setSelectedInstrument] = useState<string>("all");
-  const [hoveredPerson, setHoveredPerson] = useState<string | null>(null);
+
 
   // Get all unique instruments from people data
   const allInstruments = Array.from(new Set(
@@ -127,8 +127,7 @@ const PeopleGrid = () => {
               key={person.id}
               href={`/people/${person.id}`}
               className="group relative bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-primary/10 cursor-pointer"
-              onMouseEnter={() => setHoveredPerson(person.id)}
-              onMouseLeave={() => setHoveredPerson(null)}
+
             >
               {/* Background Gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

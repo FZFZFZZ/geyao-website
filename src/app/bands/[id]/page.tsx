@@ -3,12 +3,10 @@
 import { notFound } from "next/navigation";
 import { bandsData } from "@/data/bands";
 import { peopleData } from "@/data/people";
-import { Instagram, Youtube, Music, Users, Calendar, Play, ExternalLink, Guitar, Mic, Piano, Drum, X, FolderOpen, Download } from "lucide-react";
+import { Instagram, Youtube, Music, Users, Calendar, Play, ExternalLink, Guitar, Mic, Piano, Drum, FolderOpen, Download } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import React from "react";
-import { GENERAL_RECRUITMENT_NEEDS } from "@/data/recruitmentNeeds";
 import JoinUsButton from "@/components/JoinUsButton";
 
 interface BandPageProps {
