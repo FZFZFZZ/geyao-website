@@ -35,7 +35,7 @@ export const bandsData: Band[] = [
   {
     id: "1",
     name: "One Minute",
-    photo: "/bandphotos/1.jpg",
+    photo: "/bandphotos/1.png",
     tags: ["流行", "歌剧"],
     members: ["2", "14"],
     formed: "2025",
@@ -149,7 +149,7 @@ export const bandsData: Band[] = [
   {
     id: "7",
     name: "Mission Hidden",
-    photo: "/bandphotos/7.jpg",
+    photo: "/bandphotos/7.png",
     description: "主打一个玩的开心的乐队",
     tags: ["流行", "摇滚", "R&B"],
     members: ["9", "34", "35", "36", "37", "38", "39"],
