@@ -309,3 +309,57 @@ const ContactPage = () => {
               Contact Us
             </motion.h1>
             
+            {/* Alumni Aunty Meme */}
+            <motion.div
+              key={`meme-${animationKey}`}
+              className="flex-shrink-0 cursor-pointer hover:scale-110 transition-transform duration-300"
+              initial={{ 
+                opacity: 0,
+                scale: 0.8,
+                rotate: -5
+              }}
+              animate={{ 
+                opacity: 1,
+                scale: 1,
+                rotate: 0
+              }}
+              transition={{
+                delay: 0.7,
+                duration: 0.5,
+                ease: [0.4, 0, 0.2, 1]
+              }}
+              whileHover={{ 
+                scale: 1.1,
+                rotate: 5
+              }}
+            >
+              <Image 
+                src="/alumni-aunty-meme.png" 
+                alt="Alumni aunty meme" 
+                className="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 object-contain"
+                width={112}
+                height={112}
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                }}
+              />
+              <div className="hidden w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 bg-gray-700/50 rounded-lg border-2 border-dashed border-gray-500 flex items-center justify-center">
+                <span className="text-xs text-gray-400 text-center px-2">MEME<br/>HERE</span>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Dynamic Styles for Custom Bubble Animations */}
+        {bubbles.length > 0 && (
+          <style dangerouslySetInnerHTML={{
+            __html: getCustomPulseStyles(bubbles)
+          }} />
+        )}
+      </div>
+    </>
+  );
+};
+
+export default ContactPage; 
