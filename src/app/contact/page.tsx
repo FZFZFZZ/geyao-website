@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import socialPlatforms from '@/data/socialPlatforms';
 import Bubble from '@/components/Bubble';
 import { getCustomPulseStyles } from '@/lib/bubbleStyles';
@@ -309,3 +308,18 @@ const ContactPage = () => {
               Contact Us
             </motion.h1>
             
+          </div>
+        </div>
+
+        {/* Dynamic Styles for Custom Bubble Animations */}
+        {bubbles.length > 0 && (
+          <style dangerouslySetInnerHTML={{
+            __html: getCustomPulseStyles(bubbles)
+          }} />
+        )}
+      </div>
+    </>
+  );
+};
+
+export default ContactPage; 
