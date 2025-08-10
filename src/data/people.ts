@@ -117,7 +117,7 @@ export const peopleData: Person[] = [
       instagram: "sinncxynie",
       telegram: "@sinncxynie"
     },
-    casualTalk: "🌙",
+    casualTalk: "she’s finding her violin bow",
     topAlbums: [
       "Biitersweet - Polyphia",
       "河北墨麒麟 - 万能青年旅店",
@@ -589,6 +589,7 @@ export const peopleData: Person[] = [
     id: "42",
     name: "Huang Yuqi",
     department: ["Performer"],
+    photo: "/photos/Huang_Yuqi.png",
     bands: ["5"],
     roles: ["Bass"],
     social: {
@@ -641,6 +642,17 @@ export const peopleData: Person[] = [
     department: ["Performer"],
     roles: ["Vocal"],
     bands: ["5"],
+    social: {
+      wechat: "/qr-codes/collection.png",
+    },
+  },
+  {
+    id: "48",
+    name: "Zhang Huiyan",
+    photo: "/photos/Zhang_Huiyan.png",
+    department: ["Performer"],
+    roles: ["Vocal", "Rap"],
+    bands: ["5", "2"],
     social: {
       wechat: "/qr-codes/collection.png",
     },

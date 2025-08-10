@@ -48,7 +48,7 @@ export const bandsData: Band[] = [
     name: "MADreamers",
     photo: "/bandphotos/2.jpg",
     tags: ["嘻哈", "说唱"],
-    members: ["3", "13", "15", "18", "19"],
+    members: ["3", "13", "15", "18", "19", "48"],
     formed: "2024",
     social: {
       instagram: "@madreamers_scgs",
