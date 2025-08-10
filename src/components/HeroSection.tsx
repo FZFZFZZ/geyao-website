@@ -8,6 +8,29 @@ import { GENERAL_RECRUITMENT_NEEDS } from '@/data/recruitmentNeeds';
 const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Helper function to convert URLs to clickable links
+  const renderClickableLinks = (text: string) => {
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    const parts = text.split(urlRegex);
+    
+    return parts.map((part, index) => {
+      if (part.match(urlRegex)) {
+        return (
+          <a
+            key={index}
+            href={part}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-400 hover:text-blue-300 underline transition-colors"
+          >
+            {part}
+          </a>
+        );
+      }
+      return part;
+    });
+  };
+
   const navLinks = [
     { href: "/bands", label: "Bands" },
     { href: "/people", label: "People" },
@@ -71,9 +94,9 @@ const HeroSection = () => {
             <div className="space-y-6">
               {/* 总招聘需求 */}
               <div className="bg-gray-900/50 rounded-lg p-6">
-                <pre className="text-gray-300 whitespace-pre-wrap text-sm leading-relaxed">
-                  {GENERAL_RECRUITMENT_NEEDS}
-                </pre>
+                <div className="text-gray-300 text-sm leading-relaxed whitespace-pre-wrap">
+                  {renderClickableLinks(GENERAL_RECRUITMENT_NEEDS)}
+                </div>
               </div>
               
               {/* 其他页面的提示 */}

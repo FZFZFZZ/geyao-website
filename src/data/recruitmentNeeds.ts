@@ -1,5 +1,6 @@
 export const GENERAL_RECRUITMENT_NEEDS = `
-🎵 **歌谣海选** 🎵
+🎵 歌谣海选 🎵
+请参考每项要求并填写对应报名表，一人可报名多个角色。今年没有线下面试哦~ 
 
 爵士
 https://forms.gle/UrUYwsLG4u6Cn73L7
